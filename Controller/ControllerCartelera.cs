@@ -56,15 +56,13 @@ namespace Controller.Cartelera
                     {
                         while (reader.Read())
                         {
-                            personajes.Add(new ModelCartelera
-                            {
-                                idpelicula = reader["idpelicula"] != DBNull.Value ? Convert.ToInt32(reader["idpelicula"]) : 0, // Si es null, asigna 0
-                                Nombre = reader["Nombre"] != DBNull.Value ? reader["Nombre"].ToString() : null,
-                                Genero  = reader["Genero"] != DBNull.Value ? reader["Genero"].ToString() : null,
-                                Añoestreno = reader["Añoestreno"] != DBNull.Value ? Convert.ToInt32(reader["Añoestreno"]) : 0, // Si es null, asigna 0
-                               PersonajePrincipal = reader["PersonajePrincipal"] != DBNull.Value ? reader["PersonajePrincipal"].ToString() : null,
-
-
+                            personajes.Add(new ModelCartelera(
+                                 Convert.ToInt32(reader["idpelicula"]),
+                                 reader["Nombre"].ToString(),
+                                 reader["Genero"].ToString(),
+                                 Convert.ToInt32(reader["Añoestreno"]),
+                                 reader["PersonajePrincipal"].ToString()
+                             ));
 
                             });
                         }
