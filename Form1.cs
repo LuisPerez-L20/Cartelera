@@ -23,7 +23,8 @@ namespace Cartelera
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (Cat.EliminarCartelera(Convert.ToInt32(btnEliminar.Text)))
+            if (Cat.EliminarCartelera(Convert.ToInt32(txbeliminar.Text)))
+
                 MessageBox.Show("Pelicula eliminada con exito...");
 
             else
@@ -31,20 +32,16 @@ namespace Cartelera
 
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        public void btnAgregar_Click(object sender, EventArgs e)
         {
-
-            ModelCartelera nuevapelicula = new ModelCartelera(txbNombre.Text, txbGenero.Text, Convert.ToInt32(txbAñoestreno.Text), txbPersonajePrincipal.Text);
- 
-
-            if (Cat.AgregarCartelera(nuevapelicula))
+            if (Cat.AgregarCartelera(new ModelCartelera(txbNombre.Text, txbGenero.Text, Convert.ToInt32(txbAñoestreno.Text), txbPersonajePrincipal.Text)))
+            {
                 MessageBox.Show("Pelicula agregada con exito...");
+            }
             else
+            {
                 MessageBox.Show("La pelicula fallo su insercion...");
+            }   
         }
-
-
-
-
     }
 }

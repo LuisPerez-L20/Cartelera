@@ -13,8 +13,8 @@ namespace Cartelera.Controller
 
         bool EliminarCartelera(int idpelicula);
 
-        public bool AgregarCartelera(ModelCartelera nuevacartelea);
+        public bool AgregarCartelera(ModelCartelera nuevacartelera);
 
-     
+
     }
 }

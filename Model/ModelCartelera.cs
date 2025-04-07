@@ -7,24 +7,23 @@ using System.Threading.Tasks;
 
 namespace Model.Cartelera
 {
-    class ModelCartelera
+    public class ModelCartelera
     {
-        public ModelCartelera(string? nombre, string? genero, int añoestreno, string? personajePrincipal)
+        public int idpelicula { get; set; }
+        public string? Nombre { get; set; }
+        public string? Genero { get; set; }
+        public DateTime Añoestreno { get; set; } 
+        public string? PersonajePrincipal { get; set; }
+
+   
+        public ModelCartelera(int idpelicula, string? nombre, string? genero, DateTime añoestreno, string? personajePrincipal)
         {
+            this.idpelicula = idpelicula;
             Nombre = nombre;
             Genero = genero;
             Añoestreno = añoestreno;
             PersonajePrincipal = personajePrincipal;
         }
-        public ModelCartelera()
-        {
-        }
-        public int idpelicula { get; set; }
-        public string? Nombre { get; set; }
-        public string? Genero { get; set; }
-        public int Añoestreno { get; set; }
-        public string? PersonajePrincipal { get; set; }
-       
-        
     }
+
 }
